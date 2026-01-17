@@ -1,0 +1,171 @@
+# --- 构建系统 ---
+# CMake 构建目录
+build/
+CMakeFiles/
+CMakeCache.txt
+cmake_install.cmake
+Makefile
+CMakeUserPresets.json
+*.cmake
+
+# CMake 临时文件
+.cmake/
+CMakeScripts/
+
+# 自动生成的 CMake 构建目录
+*/cmake-build-*/
+cmake-build-*/
+
+# --- IDE 项目文件 ---
+
+# Visual Studio
+.vs/
+*.vcxproj
+*.vcxproj.filters
+*.vcxproj.user
+*.sln
+*.suo
+*.opensdf
+*.sdf
+ipch/
+*.db
+Debug/
+Release/
+x64/
+x86/
+Win32/
+*.aps
+*.ncb
+
+# CLion
+.idea/
+*.iml
+cmake-build-*/
+
+# Qt Creator
+*.pro.user
+*.pro.user.*
+*.qbs.user
+*.qbs.user.*
+
+# Eclipse
+.settings/
+.metadata/
+*.cproject
+*.project
+
+# CodeBlocks
+*.workspace
+*.layout
+*.depend
+
+# CodeLite
+*.tags
+.workspace/
+
+# Xcode
+*.xcodeproj
+*.xcworkspace
+xcuserdata/
+*.mode1v3
+*.mode2v3
+*.perspectivev3
+
+# VS Code
+.vscode/
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+
+# --- 编译输出 ---
+# 可执行文件和库
+*.exe
+*.out
+*.app
+*.so
+*.dylib
+*.dll
+*.lib
+*.a
+*.o
+*.obj
+*.lo
+*.la
+*.al
+*.libs
+
+# 中间文件
+*.slo
+*.lo
+*.o
+*.obj
+*.gcda
+*.gcno
+*.ilk
+*.map
+*.exp
+
+# 调试文件
+*.pdb
+*.idb
+*.ipdb
+*.iobj
+
+# 预处理文件
+*.i
+*.ii
+*.s
+
+# --- 临时文件 ---
+# 备份文件
+*~
+*.bak
+*.swp
+*.swo
+*#
+
+# 临时文件
+*.tmp
+*.temp
+Thumbs.db
+.DS_Store
+
+# --- 日志和文档 ---
+*.log
+*.tlog
+*.lastbuildstate
+
+# --- 依赖管理 ---
+# Conan
+.conan/
+conan.lock
+
+# Vcpkg
+vcpkg_installed/
+
+# --- 其他 ---
+# 覆盖率报告
+coverage/
+*.gcov
+
+# 性能分析
+*.prof
+*.profraw
+
+# 包目录
+packages/
+
+# 用户特定文件
+*_user
+*.user
+*.userprefs
+
+# 测试输出
+TestResults/
+*.trx
+
+# 杂项
+.directory
+*.cache
+*.orig
