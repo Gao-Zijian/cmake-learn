@@ -1,0 +1,7 @@
+cmake_minimum_required(VERSION 3.20)
+project(cmake_include)
+message("begin include")
+include(cmake/test_cmake.cmake)
+include(cmake/test_cmake1.cmake OPTIONAL RESULT_VARIABLE ret)
+message("RESULT_VARIABLE=${ret}")
+message("end include")

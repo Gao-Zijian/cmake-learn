@@ -102,3 +102,22 @@ unset(变量名)
 
 **PROJECT_NAME**：项目名称
 
+---
+
+#### include
+
+include()将一个cmake文件引入进来，相当于C语言include，可以多次include
+
+```cmake
+include(cmake/test_cmake.cmake)
+
+# 将查找结果赋值给ret
+include(cmake/test_cmake1.cmake OPTIONAL RESULT_VARIABLE ret)
+```
+
+若文件不存在则报错，程序继续
+
+OPTIONAL:文件不存在继续执行不报错
+
+若未找到，RESULT_VARIABLE为NOTFOUND，若找到，值为文件的绝对路径
+
