@@ -178,3 +178,6 @@ cmake --build build -v
 set(CMAKE_VERBOSE_MAKEFILE on)
 ```
 
+#### add_subdirectory
+
+添加一个子目录，执行子目录的cmake
