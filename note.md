@@ -121,3 +121,60 @@ OPTIONAL:文件不存在继续执行不报错
 
 若未找到，RESULT_VARIABLE为NOTFOUND，若找到，值为文件的绝对路径
 
+#### 分步编译(Linux)
+
+首先生成
+
+```shell
+cmake -S . -B build
+cd build
+```
+
+查看可生成的目标
+
+```shell
+cmake --build . --target help
+```
+
+1. 预处理(生成.i文件)
+
+```shell
+cmake --build . --target  101first_cmake.i
+```
+
+2. 编译(生成.s文件)
+
+```shell
+cmake --build . --target 101first_cmake.s
+```
+
+3. 汇编(生成.o文件)
+
+```shell
+cmake --build . --target 101first_cmake.o
+```
+
+4. 链接(生成可执行文件)
+
+```shell
+cmake --build .
+```
+
+清理
+
+```
+cmake --build . --target clean
+```
+
+显示详细的编译过程
+
+```shell
+cmake --build build -v
+```
+
+或者
+
+```cmake
+set(CMAKE_VERBOSE_MAKEFILE on)
+```
+

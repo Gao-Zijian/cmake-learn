@@ -5,5 +5,7 @@ cmake_minimum_required(VERSION 3.20)
 # 项目名称
 project(first_cmake)
 
+#set(CMAKE_VERBOSE_MAKEFILE on)
+
 # 构建执行程序
 add_executable(first_cmake 101first_cmake.cpp)
