@@ -181,3 +181,42 @@ set(CMAKE_VERBOSE_MAKEFILE on)
 #### add_subdirectory
 
 添加一个子目录，执行子目录的cmake
+
+### 3.cmake语法
+
+#### if
+
+```cmake
+if()
+
+elseif()
+
+elseif()
+
+else()
+
+endif()
+```
+
+1,ON,YES,TRUE,Y或非0数（包括浮点数）则为真
+
+0,OFF,NO,FALSE,N,IGNORE,NOTFOUND,空字符串，或以NOTFOUND结尾，变量未定义为假
+
+环境变量总为假
+
+取反:NOT
+
+与:AND
+
+或:OR
+
+判断语句
+
+- EXISTS:检查文件是否存在
+- COMMAND:检查命令是否存在(包括函数或宏)
+- DEFINED:检查是否定义了变量
+- EQUAL比较字符串或数字是否相等
+- EQUAL, LESS, LESS_EQUAL, GREATER, GREATER_EQUAL:数值比较
+- STREQUAL, STRLESS, STRLESS_EQUAL, STRGREATER, STRGREATER_EQUAL:字符串比较
+- VERSION_EQUAL, VERSION_LESS, VERSION_LESS_EQUAL,VERSION_GREATER, VERSION_GREATER_EQUAL:版本比较
+- MATCHES字符串匹配（正则表达式）
