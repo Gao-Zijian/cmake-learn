@@ -1,0 +1,7 @@
+cmake_minimum_required(VERSION 3.20)
+project(sub1)
+message("sub1 in")
+set(VAR_SUB1 "VAR_SUB1")
+set(VAR_NORMAL_CACHE "VAR_NORMAL_CACHE" CACHE STRING "VAR_NORMAL_CACHE")
+message("VAR_SUB2=${VAR_SUB2}")
+message("${VAR_NORMAL}")

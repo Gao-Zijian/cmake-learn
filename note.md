@@ -220,3 +220,43 @@ endif()
 - STREQUAL, STRLESS, STRLESS_EQUAL, STRGREATER, STRGREATER_EQUAL:字符串比较
 - VERSION_EQUAL, VERSION_LESS, VERSION_LESS_EQUAL,VERSION_GREATER, VERSION_GREATER_EQUAL:版本比较
 - MATCHES字符串匹配（正则表达式）
+
+#### 缓存变量
+
+缓存变量的作用域是全局的
+
+普通变量各子模块之间不能访问，父模块不能访问子模块变量，子模块可以读取父模块变量
+
+```cmake
+# set(<variable> <value>... CACHE <type> <docstring> [FORCE])
+set(VAR1 "CACHE VAR1 VALUE1" CACHE STRING "cache doc")
+```
+
+类型:
+
+- STRING:字符串
+- BOOL:布尔类型
+- FILEPATH:文件
+- PATH:文件夹
+- INTERNAL:内部,cmake-gui看不到
+
+使用option()定义选项，相当于BOOL类型
+
+```cmake
+option(OPT1 "opt1 doc" OFF)
+option(OPT2 "opt2 doc" ON)
+```
+
+linux使用ccmake代替cmake-gui
+
+```shell
+cmake -S . -B build
+ccmake build
+```
+
+命令行传递变量(缓存变量)
+
+```cmake
+cmake -S . -B build -D PARA1=para1
+```
+
