@@ -52,3 +52,32 @@ message("TEST_DEF=${var}")
 get_property(var GLOBAL PROPERTY TEST_DEF BRIEF_DOCS)
 message("TEST_DEF BRIEF_DOCS=${var}")
 
+set_property(DIRECTORY . PROPERTY DIR1 "dir001")
+get_property(var DIRECTORY . PROPERTY DIR1)
+message("DIR1=${var}")
+
+get_property(var DIRECTORY sub1 PROPERTY DIR1)
+message("sub1 DIR1=${var}")
+
+#文件属性
+set_property(SOURCE main.cpp PROPERTY S1 "s1 value")
+get_property(var SOURCE main.cpp PROPERTY S1)
+message("SOURCE S1=${var}")
+
+# cmake传递变量给C++
+# cmake预置属性,-DPARA1=1234
+set_property(SOURCE main.cpp PROPERTY COMPILE_DEFINITIONS "PARA1=1234")
+add_executable(${PROJECT_NAME} main.cpp)
+
+
+#cmake目标属性,目标必须已经存在
+set_property(TARGET ${PROJECT_NAME} PROPERTY TVAR "TVAL")
+get_property(var TARGET ${PROJECT_NAME} PROPERTY TVAR)
+message("TVAR=${var}")
+#给c++传递宏,传递字符串
+set_property(TARGET ${PROJECT_NAME} PROPERTY COMPILE_DEFINITIONS "PARA2=\"test_target\"")
+#追加
+set_property(TARGET ${PROJECT_NAME} APPEND PROPERTY COMPILE_DEFINITIONS "PARA3=\"test_target\"")
+
+include(CMakePrintHelpers)
+cmake_print_properties(TARGETS ${PROJECT_NAME} PROPERTIES COMPILE_DEFINITIONS TVAR)

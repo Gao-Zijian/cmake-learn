@@ -272,7 +272,10 @@ set_property(entitySpecific
 
 entitySpecific:
 
-- GLOBAL
+- GLOBAL:全局属性
+- SOURCE:文件属性
+- DIRECTORY:目录属性
+- TARGET:目标属性，目标必须已经存在
 
 APPEND:追加，数组形式(分号分隔)
 
@@ -332,3 +335,11 @@ BRIEF_DOCS:定义简要文档
 FULL_DOCS:定义详细文档
 
 INITIALIZE_FROM_VARIABLE:
+
+**打印属性**
+
+```cmake
+include(CMakePrintHelpers)
+cmake_print_properties(TARGETS ${PROJECT_NAME} PROPERTIES COMPILE_DEFINITIONS TVAR)
+```
+
