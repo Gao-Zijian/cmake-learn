@@ -260,3 +260,75 @@ ccmake build
 cmake -S . -B build -D PARA1=para1
 ```
 
+#### 属性
+
+**设置属性**
+
+```cmake
+set_property(entitySpecific
+  [APPEND] [APPEND_STRING]
+  PROPERTY propName [value1 [value2 [...]]])
+```
+
+entitySpecific:
+
+- GLOBAL
+
+APPEND:追加，数组形式(分号分隔)
+
+APPEND_STRING:追加为字符串
+
+PROPERTY:必须写
+
+propName:属性名
+
+value:值
+
+**获取属性**
+
+```cmake
+get_property(resultVar entitySpecific
+  PROPERTY propName
+  [DEFINED | SET | BRIEF_DOCS | FULL_DOCS])
+```
+
+resultVar:返回值，可以不定义
+
+entitySpecific:
+
+- GLOBAL
+
+PROPERTY:必须写
+
+propName:属性名
+
+- DEFINED:属性是被定义过的吗?(define_property),如果定义过resultVar为真，否则为假
+- SET:属性定义过且值‘为真吗?如果为真，resultVar为真，否则为假
+
+- BRIEF_DOCS:获取属性的简短说明
+- FULL_DOCS:获取属性的完整文档
+
+**定义属性**
+
+```cmake
+define_property(<SCOPE> PROPERTY <name>
+    [INHERITED]           # 是否继承
+    [BRIEF_DOCS <docs>]   # 简要文档
+    [FULL_DOCS <docs>]    # 详细文档
+    [INITIALIZE_FROM_VARIABLE <var>]  # 从变量初始化
+)
+```
+
+SCOPE:
+
+- GLOBAL:全局
+
+PROPERTY:必须写
+
+name:属性名
+
+BRIEF_DOCS:定义简要文档
+
+FULL_DOCS:定义详细文档
+
+INITIALIZE_FROM_VARIABLE:
